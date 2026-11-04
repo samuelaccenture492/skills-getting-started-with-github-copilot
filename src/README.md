@@ -1,19 +1,22 @@
 # Mergington High School Activities API
 
-A super simple FastAPI application that allows students to view and sign up for extracurricular activities.
+A super simple FastAPI application that allows students to view, sign up for, and unregister from extracurricular activities.
 
 ## Features
 
 - View all available extracurricular activities
 - Sign up for activities
+- Unregister participants from activities
 
 ## Getting Started
 
 1. Install the dependencies:
 
    ```
-   pip install fastapi uvicorn
+   pip install -r requirements.txt
    ```
+
+   Run this command from the repository root.
 
 2. Run the application:
 
@@ -27,10 +30,19 @@ A super simple FastAPI application that allows students to view and sign up for 
 
 ## API Endpoints
 
-| Method | Endpoint                                                          | Description                                                         |
-| ------ | ----------------------------------------------------------------- | ------------------------------------------------------------------- |
-| GET    | `/activities`                                                     | Get all activities with their details and current participant count |
-| POST   | `/activities/{activity_name}/signup?email=student@mergington.edu` | Sign up for an activity                                             |
+| Method | Endpoint                                                               | Description                                                         |
+| ------ | ---------------------------------------------------------------------- | ------------------------------------------------------------------- |
+| GET    | `/activities`                                                          | Get all activities with their details and current participant count |
+| POST   | `/activities/{activity_name}/signup?email=student@mergington.edu`      | Sign up for an activity                                              |
+| DELETE | `/activities/{activity_name}/participants?email=student@mergington.edu` | Unregister a participant from an activity                            |
+
+## Running Tests
+
+From the repository root, run:
+
+```sh
+pytest
+```
 
 ## Data Model
 
